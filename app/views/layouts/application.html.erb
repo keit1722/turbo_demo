@@ -18,8 +18,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="bg-gray-50 text-gray-800" data-controller="scroll-position">
+    <header class="bg-white shadow mb-4 sticky top-0 z-10">
+      <nav class="container mx-auto px-4 py-4 flex justify-between">
+        <div class="space-x-4">
+          <%= link_to "ホーム", root_path, class: "text-blue-500 hover:text-blue-700" %>
+          <%= link_to "ユーザー一覧", users_path, class: "text-blue-500 hover:text-blue-700" %>
+          <%= link_to "プロフィール", profile_path, class: "text-blue-500 hover:text-blue-700" %>
+          <%= link_to "プロフィール（Turbo無効）", profile_path, data: { turbo: false }, class: "text-red-500 hover:text-red-700" %>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <%= turbo_frame_tag 'flash' %>
       <%= yield %>
     </main>
   </body>

@@ -1,0 +1,14 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-4">ホームページ</h1>
+  <p class="mb-4">こちらはホームページです。</p>
+
+  <!-- 動的コンテンツ -->
+  <div class="mb-8">
+    <p class="text-sm text-gray-500">現在のページ: <strong>ホームページ</strong></p>
+    <p class="text-sm text-gray-500">訪問時刻: <%= Time.current.strftime('%H:%M:%S') %></p>
+  </div>
+
+  <!-- ナビゲーション -->
+  <%= link_to 'プロフィールページへ', profile_path, class: 'text-blue-500 hover:text-blue-700' %>
+  <%= link_to 'プロフィールページへ（Turbo無効）', profile_path, data: { turbo: false }, class: 'text-red-500 hover:text-red-700' %>
+</div>

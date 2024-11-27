@@ -1,0 +1,12 @@
+<%= turbo_frame_tag user do %>
+  <%= form_with model: user do |f| %>
+    <div class="mb-4">
+      <%= f.label :name, "名前", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.text_field :name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm" %>
+    </div>
+    <div class="flex space-x-2">
+      <%= f.submit "保存", class: "px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-700"%>
+      <%= link_to "キャンセル", "#", class: "px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400" %>
+    </div>
+  <% end %>
+<% end %>
