@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "home#index"
-  resource :profile, only: [ :show, :update]
+  resource :profile, only: [ :show, :update ]
   # resources :users, only: [:index, :update]
   resources :users
 end
